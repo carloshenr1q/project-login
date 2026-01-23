@@ -1,50 +1,118 @@
-# Welcome to your Expo app 👋
+# Projeto Login
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Este é um aplicativo Expo React Native para autenticação de usuários, apresentando funcionalidades de login e criação de conta usando Firebase e Google Sign-In.
 
-## Get started
+## Funcionalidades
 
-1. Install dependencies
+- Login de usuário com autenticação do Google
+- Criação de conta
+- Navegação baseada em abas
+- Integração com Firebase para serviços backend
+- Design responsivo com componentes Expo
+
+## Tecnologias Utilizadas
+
+- **Expo**: Framework para aplicações React universais
+- **React Native**: Desenvolvimento de aplicativos móveis
+- **Firebase**: Serviços backend para autenticação
+- **TypeScript**: JavaScript com tipagem segura
+- **React Navigation**: Biblioteca de navegação
+
+## Pré-requisitos
+
+- Node.js (versão 18 ou superior)
+- npm ou yarn
+- Expo CLI
+- Android Studio (para desenvolvimento Android)
+- Xcode (para desenvolvimento iOS, apenas macOS)
+
+## Instalação
+
+1. Clone o repositório:
+
+   ```bash
+   git clone <url-do-repositório>
+   cd project-login
+   ```
+
+2. Instale as dependências:
 
    ```bash
    npm install
    ```
 
-2. Start the app
+3. Configure o Firebase:
+
+   - Crie um projeto Firebase no [Firebase Console](https://console.firebase.google.com/)
+   - Habilite o Google Sign-In nas configurações de Autenticação
+   - Baixe o arquivo `google-services.json` e coloque na raiz do projeto
+   - Atualize `firebaseConfig.ts` com sua configuração do Firebase
+
+4. Configure variáveis de ambiente se necessário (usando react-native-dotenv)
+
+## Executando o Aplicativo
+
+1. Inicie o servidor de desenvolvimento Expo:
 
    ```bash
-    npx expo start
+   npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+2. Escolha sua plataforma alvo:
+   - **Android**: Pressione `a` ou escaneie o código QR com o app Expo Go
+   - **iOS**: Pressione `i` (apenas macOS) ou escaneie o código QR com o app Expo Go
+   - **Web**: Pressione `w` para abrir no navegador
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Estrutura do Projeto
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+project-login/
+├── app/                    # Diretório principal do app (roteamento baseado em arquivos)
+│   ├── _layout.tsx         # Layout raiz
+│   ├── index.tsx           # Tela inicial
+│   ├── create-account.tsx  # Tela de criação de conta
+│   ├── (tabs)/             # Navegação por abas
+│   └── account/            # Telas relacionadas à conta
+├── components/             # Componentes reutilizáveis
+├── constants/              # Constantes do app
+├── hooks/                  # Hooks personalizados
+├── assets/                 # Imagens e fontes
+├── firebaseConfig.ts       # Configuração do Firebase
+└── google-services.json    # Configuração dos serviços Google
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Scripts
 
-## Learn more
+- `npm start` / `npx expo start`: Iniciar o servidor de desenvolvimento
+- `npm run android`: Iniciar no emulador Android
+- `npm run ios`: Iniciar no simulador iOS
+- `npm run web`: Iniciar no navegador web
+- `npm run test`: Executar testes
+- `npm run lint`: Executar linting
+- `npm run reset-project`: Resetar para um projeto Expo novo
 
-To learn more about developing your project with Expo, look at the following resources:
+## Testes
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Execute a suíte de testes:
 
-## Join the community
+```bash
+npm run test
+```
 
-Join our community of developers creating universal apps.
+## Contribuição
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+1. Faça um fork do repositório
+2. Crie uma branch de funcionalidade
+3. Faça suas alterações
+4. Execute testes e linting
+5. Envie um pull request
+
+## Licença
+
+Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
+
+## Saiba Mais
+
+- [Documentação do Expo](https://docs.expo.dev/)
+- [Documentação do React Native](https://reactnative.dev/docs/getting-started)
+- [Documentação do Firebase](https://firebase.google.com/docs)
